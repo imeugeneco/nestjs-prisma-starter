@@ -1,61 +1,33 @@
-Starter repository for NestJS + Prisma. Made to be used as a starting point for creating APIs for side projects.
+Starter repository for NestJS + Prisma. </br>
+Made to be used as a starting point for my side projects.
 
-## Installation
+#### Features
+- [x] MySQL with Prisma
+- [x] JWT Authentication
+- [ ] Google Authentication
+- [ ] Twitter Authentication
+- [ ] Email verification
+- [ ] Password Reset
+- [ ] Swagger API Documentation
+- [x] Logger
+- [ ] Model Events Listener
+- [ ] CI/CD pipeline via Github Actions
 
+
+#### Installation
 ```bash
-
 $  npm  install
-
 ```
 
-## Running the app
 
+#### Running the app
 ```bash
-
 # development
-
 $  npm  run  start
 
-
-
 # watch mode
-
 $  npm  run  start:dev
 
-
-
 # production mode
-
 $  npm  run  start:prod
-
-
-
-```
-
-## Prisma (ORM)
-
-```bash
-
-# IDE for your database
-
-$  npx  prisma  studio
-
-
-
-# run migrations (apply schema changes)
-
-$  npx  prisma  migrate  dev
-
-
-
-# run migrations on CI/CD
-
-$  npx  prisma  migrate  deploy
-
-
-
-# apply db schema changes to the prisma client
-
-$  npx  prisma  generate
-
 ```
