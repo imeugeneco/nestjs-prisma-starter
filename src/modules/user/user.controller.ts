@@ -11,6 +11,8 @@ import { UserService } from './user.service';
 import { JwtAuthGuard } from 'src/guards/jwt.guard';
 import { Response } from 'express';
 import { sendResponse } from 'src/shared/helpers/api.response.helper';
+import { CurrentUser } from 'src/decorators/current-user.decorator';
+import { User } from '@prisma/client';
 
 @Controller('user')
 export class UserController {
@@ -19,13 +21,13 @@ export class UserController {
   @Get()
   @UseGuards(JwtAuthGuard)
   async getMyInfo(
-    @Headers() headers: any,
+    @CurrentUser() user: User,
     @Res() res: Response,
   ): Promise<Response> {
-    const user = await this.userService.getUserInfoExcludingKeys(
-      { id: headers.user.id },
+    const userInfo = await this.userService.getUserInfoExcludingKeys(
+      { id: user.id },
       ['username', 'password'],
     );
-    return sendResponse(res, HttpStatus.OK, user);
+    return sendResponse(res, HttpStatus.OK, userInfo);
   }
 }

@@ -30,6 +30,7 @@
     "@prisma/client": "^4.14.1",
     "chalk": "^4.1.2",
     "class-transformer": "^0.5.1",
+    "code-config": "^1.0.55",
     "moment-timezone": "^0.5.43",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
